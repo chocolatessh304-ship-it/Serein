@@ -11,4 +11,4 @@ COPY README.md ./
 COPY src ./src
 COPY config ./config
 RUN pip install --no-deps --no-build-isolation . && pip check
-CMD ["python", "-m", "serein", "--config", "/app/config/config.toml", "http", "--host", "0.0.0.0", "--port", "8011"]
+CMD ["python", "-m", "serein", "--config", "/app/config/config.toml", "http", "--host", "0.0.0.0", "--port", "8011", "--token-env", "SEREIN_TOKEN"]
