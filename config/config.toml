@@ -3,7 +3,7 @@ database = "./.runtime/serein.db"
 index = "./.runtime/recall-index.sqlite"
 
 [runtime]
-writable = true
+writable = false
 
 [recall]
 direct_threshold = 0.65
