@@ -9,4 +9,4 @@ RUN pip install tomli && \
 COPY README.md ./
 COPY src ./src
 RUN pip install --no-deps --no-build-isolation . && pip check
-CMD ["python", "-m", "serein", "--config", "/config/config.toml", "--live", "http", "--host", "0.0.0.0", "--port", "8011"]
+CMD ["python", "-m", "serein", "--config", "/app/config/config.toml", "--live", "http", "--host", "0.0.0.0", "--port", "8011"]
