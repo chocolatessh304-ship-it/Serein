@@ -5,7 +5,7 @@ COPY pyproject.toml ./
 RUN pip install tomli && \
     python -c "import tomli; p=tomli.load(open('pyproject.toml','rb')); r=p['build-system']['requires']+['wheel']+p['project']['dependencies']; print('\n'.join(r))" > /tmp/serein-requirements.txt && \
     pip install -r /tmp/serein-requirements.txt && \
-    pip install uvicorn && \
+    pip install uvicorn fastapi httpx sse-starlette && \
     rm /tmp/serein-requirements.txt
 COPY README.md ./
 COPY src ./src
