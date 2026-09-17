@@ -10,4 +10,4 @@ COPY README.md ./
 COPY src ./src
 COPY config ./config
 RUN pip install --no-deps --no-build-isolation . && pip check
-CMD sh -c "python -m serein --config /app/config/config.toml setup && python -m serein --config /app/config/config.toml http --host 0.0.0.0 --port 8011 --token-env SEREIN_TOKEN"
+CMD sh -c "python -m serein setup && python -m serein prepare-routes --profile config/embedding-profile.json --examples examples/route-examples.json && python -m serein http --host 0.0.0.0 --port 8011 --token-env SEREIN_TOKEN"
