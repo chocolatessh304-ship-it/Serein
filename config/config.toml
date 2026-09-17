@@ -10,6 +10,7 @@ endpoint = "https://api.openai.com/v1/embeddings"
 api_key_env = "OPENAI_API_KEY"
 
 [recall]
+routing_file = "./.runtime/routes.json"
 direct_threshold = 0.65
 max_cards = 2
 candidate_limit = 50
