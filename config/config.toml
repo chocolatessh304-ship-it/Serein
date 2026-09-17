@@ -5,6 +5,10 @@ index = "./.runtime/recall-index.sqlite"
 [runtime]
 writable = false
 
+[embedding]
+endpoint = "https://api.openai.com/v1/embeddings"
+api_key_env = "OPENAI_API_KEY"
+
 [recall]
 direct_threshold = 0.65
 max_cards = 2
