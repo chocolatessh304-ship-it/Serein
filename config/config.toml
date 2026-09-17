@@ -6,8 +6,8 @@ index = "./.runtime/recall-index.sqlite"
 writable = false
 
 [embedding]
-endpoint = "https://api.openai.com/v1/embeddings"
-api_key_env = "OPENAI_API_KEY"
+endpoint = "https://api.siliconflow.cn/v1/embeddings"
+api_key_env = "SILICONFLOW_API_KEY"
 
 [recall]
 routing_file = "./.runtime/routes.json"
