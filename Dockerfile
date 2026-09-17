@@ -11,4 +11,7 @@ COPY src ./src
 COPY config ./config
 COPY examples ./examples
 RUN pip install --no-deps --no-build-isolation . && pip check
-CMD sh -c "python -m serein --config config/config.toml setup && python -m serein --config config/config.toml prepare-routes --profile config/embedding-profile.json --examples examples/route-examples.json && python -m serein --config config/config.toml http --host 0.0.0.0 --port 8011 --token-env SEREIN_TOKEN"
+CMD python -m serein --config config/config.toml setup && \
+    python -m serein --config config/config.toml prepare-routes --profile config/embedding-profile.json --examples examples/route-examples.json && \
+    python -m serein --config config/config.toml import --file config/memories.json && \
+    python -m serein --config config/config.toml http --host 0.0.0.0 --port 8011 --token-env SEREIN_TOKEN
